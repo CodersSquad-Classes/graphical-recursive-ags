@@ -37,6 +37,7 @@ And to run the program you must enter the following parameters in the exact orde
 - Recursion level (ex. 1, 2...)
 - X direction (ex. 0, 10...)
 - Y direction (ex. 0, 10...)
+
 Here's an example:
 - .\hilbert.exe 2 0 10
 
