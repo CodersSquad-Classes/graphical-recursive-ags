@@ -30,8 +30,17 @@ From the _Essential Algorithms: A Practical Approach to Computer Algorithms_ boo
 
 # How to compile & run you program
 
-- _You must document compilation and execution here_
-- _Don't forget to document which algorithm you're implementing_
+To compile the code you can enter the following:
+- _g++ hilbert.cpp
+
+And to run the program you must enter the following parameters in the exact order:
+- _Recursion level (ex. 1, 2...)
+- _X direction (ex. 0, 10...)
+- _Y direction (ex. 0, 10...)
+Here's an example:
+- _.\hilbert.exe 2 0 10
+
+The curve algorithm used is the Hilbert Curve, as stated in the name of the program 
 
 # Grading Policy
 
