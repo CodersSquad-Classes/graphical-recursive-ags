@@ -1,16 +1,19 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
 int current_x, current_y;
 
+ofstream lineas;
+
 void draw(int x, int y)
 {
-    cout << "(" << current_x << "," << current_y << ")";
+    lineas << "(" << current_x << "," << current_y << ")";
     current_x += x;
     current_y += y;
-    cout << "(" << current_x << "," << current_y << ")" << endl;
+    lineas << "(" << current_x << "," << current_y << ")" << endl;
 }
 
 void Hilbert_curve(int depth, int x, int y)
@@ -40,8 +43,19 @@ int main()
 {
     int recursion_val = 3;
     int direction_x = 0;
-    int direction_y = 10;
+    int direction_y = 10;  
 
-    Hilbert_curve(recursion_val, direction_x, direction_y);
+    
+    lineas.open("lines.txt");
+    if (!lineas.is_open())
+    {
+        cout << "Error creating/opening lineas.txt";
+        return -1;
+    }
+    else
+    {
+        Hilbert_curve(recursion_val, direction_x, direction_y);
+    }
+    lineas.close();
     return 0;
 }
