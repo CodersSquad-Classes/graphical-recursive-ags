@@ -39,12 +39,21 @@ void Hilbert_curve(int depth, int x, int y)
     }
 }
 
-int main()
+int main(int argc, char** argv)
 {
-    int recursion_val = 3;
-    int direction_x = 0;
-    int direction_y = 10;  
+    int recursion_val;
+    int direction_x;
+    int direction_y;  
 
+    if (argc < 4)
+    {
+        cout << "You must write all components needed" << endl << "Example: " << argv[0] << " 3 0 10" << endl;
+        return -1;
+    }
+
+    recursion_val = stoi(argv[1]);
+    direction_x = stoi(argv[2]);
+    direction_y = stoi(argv[3]);
     
     lineas.open("lines.txt");
     if (!lineas.is_open())
